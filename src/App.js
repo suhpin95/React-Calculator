@@ -1,4 +1,5 @@
 import React from 'react';
+import Grid from "@material-ui/core/Grid"
 import HeaderOfCalculator from "./Components/HeaderCalculator";
 import KeyPads from "./Components/KeyPad";
 import Display from './Components/Display'
@@ -12,6 +13,7 @@ class App extends React.Component {
     }
   }
   onClick = button  => {
+    console.log(button)
     if(button === '='){
       this.calculate();
     }
@@ -22,9 +24,10 @@ class App extends React.Component {
       this.reset();
     }
     else{
-      this.setState({
-        result:this.state.result + button
+      this.setState({        
+        result:this.state.result + button,
       })
+
     }
   }
   calculate(){
@@ -51,11 +54,17 @@ class App extends React.Component {
   }
   render(){
     return (
-        <div>
-          <HeaderOfCalculator/>
-          <Display result={this.state.result}/>
-          <KeyPads onClick={this.onClick}/>
-        </div>
+        
+      
+          <div>
+            <Grid container justify="center">
+              <HeaderOfCalculator/>
+            </Grid>
+            <Display result={this.state.result}/>
+            <KeyPads onClick={this.onClick}/>            
+          </div>
+
+        
     );
   }
 }

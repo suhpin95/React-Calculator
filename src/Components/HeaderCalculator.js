@@ -3,7 +3,7 @@ import React,{Component} from "react"
 class HeaderOfCalculator extends Component{
     render(){
         return(
-            <h3>Simple Calculator</h3>
+            <p>Simple Calculator</p>
         )
     }
 }
