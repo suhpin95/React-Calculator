@@ -5,7 +5,6 @@ import KeyPads from "./Components/KeyPad";
 import Display from './Components/Display'
 
 class App extends React.Component {  
-  
   constructor(){
     super();
     this.state = {
@@ -13,7 +12,6 @@ class App extends React.Component {
     }
   }
   onClick = button  => {
-    console.log(button)
     if(button === '='){
       this.calculate();
     }
@@ -52,19 +50,18 @@ class App extends React.Component {
       result : this.state.result.slice(0,-1)
     })
   }
+
   render(){
     return (
-        
-      
           <div>
-            <Grid container justify="center">
-              <HeaderOfCalculator/>
-            </Grid>
-            <Display result={this.state.result}/>
-            <KeyPads onClick={this.onClick}/>            
+            
+              <Grid container justify="center">
+                <HeaderOfCalculator/>
+              </Grid>
+              <Display result={this.state.result}/>
+              <KeyPads onClick={this.onClick}/> 
+            
           </div>
-
-        
     );
   }
 }
