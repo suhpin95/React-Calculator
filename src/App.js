@@ -31,7 +31,7 @@ class App extends React.Component {
   calculate(){
     try{
       this.setState({
-        result : (eval(this.state.result || "")) + ""
+        result : (eval(this.state.result || "").toFixed(4)) + ""
       })
     }
     catch (event){
